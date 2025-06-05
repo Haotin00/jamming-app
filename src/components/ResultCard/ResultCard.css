@@ -1,0 +1,46 @@
+.result-card {
+    background-color: #535982;
+    color: #F0F2FE;
+    
+    border-radius: 5px;
+    padding: 15px 16px;
+    width: 90%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-card h1 {
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.result-card:first-child {
+    margin-top: 10px;
+}
+
+.result-card:last-child {
+    margin-bottom: 10px;
+}
+
+.icon-button {
+    background: none;      /* Remove background */
+    border: none;          /* Remove border */
+    padding: 0;            /* Remove spacing */
+    margin: 0;             /* Optional: remove margin */
+    cursor: pointer;       /* Make it clickable */
+    display: inline-flex;  /* Helps center content if needed */
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.icon-button {
+    cursor: pointer;
+}

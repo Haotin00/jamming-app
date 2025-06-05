@@ -1,0 +1,18 @@
+
+.header {
+    background-color: #1B1F3B;
+    height: 124px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    text-align: center;
+    color: #F0F2FE;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 96px;
+}
+
