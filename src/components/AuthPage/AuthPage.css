@@ -1,0 +1,14 @@
+#loginToSpotifyButton {
+    width: 40%;
+    background-color: #C4C9E9;
+    margin: 10px auto;
+    padding: 6px 25px;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 31px;
+    border-color: transparent;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, -0);
+}
