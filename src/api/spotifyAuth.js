@@ -1,6 +1,7 @@
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const redirectUri = import.meta.env.VITE_SPOTIFY_REDIRECT_URI;
 export const redirectRoute = import.meta.env.VITE_SPOTIFY_REDIRECT_ROUTE;
+const baseUrl = import.meta.env.VITE_BASE_URL;
+const redirectUri = baseUrl + redirectRoute;
 
 const scope = 'user-read-private user-read-email'; // Adjust scopes as needed
 
