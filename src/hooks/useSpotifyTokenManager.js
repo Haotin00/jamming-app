@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { retrieveRefreshedToken, handleSpotifyRedirect } from '../api/spotifyAuth';
-import { redirectRoute as spotifyTokenRedirectRoute } from '../api/spotifyAuth';
+import { retrieveRefreshedToken, handleSpotifyRedirect } from '../api/spotify/spotifyAuth';
+import { redirectRoute as spotifyTokenRedirectRoute } from '../api/spotify/spotifyAuth';
 
 const localStorageKeys = {
     ACCESS_TOKEN: 'spotify_access_token',

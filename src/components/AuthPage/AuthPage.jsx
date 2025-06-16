@@ -1,6 +1,6 @@
 import Header from '../Header/Header.jsx'
 import './AuthPage.css'
-import { redirectToSpotifyAuth } from '../../api/spotifyAuth.js'
+import { redirectToSpotifyAuth } from '../../api/spotify/spotifyAuth'
 import { usePageManager } from '../../hooks/usePageManager.js'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
