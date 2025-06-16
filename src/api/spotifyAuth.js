@@ -78,14 +78,11 @@ export async function handleSpotifyRedirect() {
 
     const data = await response.json();
 
+    localStorage.removeItem('spotify_code_verifier');
+
     if (data.access_token) {
-      localStorage.setItem('spotify_access_token', data.access_token);
-      localStorage.setItem('spotify_refresh_token', data.refresh_token);
-      localStorage.setItem('spotify_token_expiration_date', new Date(Date.now() + data.expires_in * 1000).toISOString());
-      
-      // Optionally, remove the code verifier from storage
-      localStorage.removeItem('spotify_code_verifier');
-      return data.access_token;
+      console.log('Valid token retrieved', data);
+      return data;
     } else {
       console.error('Failed to obtain access token:', data);
       return null;
@@ -100,14 +97,12 @@ const getLocalStorageRefreshToken = () => {
   return localStorage.getItem('spotify_refresh_token');
 }
 
-const refreshToken = async () => {
-  const currentRefreshToken = getLocalStorageRefreshToken();
+const refreshToken = async (currentRefreshToken) => {
   
   if (!currentRefreshToken) {
-    console.error('No local refresh token available');
     return null;
   }
-
+  
   const url = "https://accounts.spotify.com/api/token";
   const body = new URLSearchParams({
     grant_type: 'refresh_token',
@@ -126,14 +121,8 @@ const refreshToken = async () => {
 
     const data = await response.json();
 
-    if (data.access_token && data.expires_in) {
-      localStorage.setItem('spotify_access_token', data.access_token);
-      localStorage.setItem('spotify_token_expiration_date', new Date(Date.now() + data.expires_in * 1000).toISOString());
-      if (data.refresh_token) {
-        localStorage.setItem('spotify_refresh_token', data.refresh_token);
-      }
-      
-      return data.access_token;
+    if (data.access_token) {
+      return data;
     } else {
       console.error('Failed to refresh access token:', data);
       return null;
@@ -142,7 +131,7 @@ const refreshToken = async () => {
     console.error('Error during token refresh:', err);
     return null;
   }
-};
+}
 
 export const retrieveRefreshedToken = async () => {
   return await refreshToken();

@@ -4,15 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function SpotifyAuthenticate() {
-    const spotifyToken = useSpotifyTokenManager();
+    
+    const [spotifyToken, isSpotifyTokenValid] = useSpotifyTokenManager();
     const navigate = useNavigate();
 
     useEffect(() => {
         // If the token is set, navigate to the app page
-        if (spotifyToken) {
+        if (isSpotifyTokenValid()) {
             navigate('/app');
         }
-    });
+    }, [spotifyToken]);
 
     return (
         <div>

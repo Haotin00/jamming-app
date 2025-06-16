@@ -14,7 +14,7 @@ const songs = [
 function AppPage() {
   const [musicInput, setMusicInput] = useState("")
 
-  const spotifyToken = useSpotifyTokenManager();
+  const [spotifyToken, isSpotifyTokenValid] = useSpotifyTokenManager();
 
   function onMusicInputChange(newInput) {
     setMusicInput(newInput);
