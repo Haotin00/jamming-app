@@ -4,7 +4,7 @@ import Header from '../Header/Header.jsx'
 import SearchBar from '../SearchBar/SearchBar.jsx'
 import SearchResult from '../SearchResult/SearchResult.jsx'
 import Playlist from '../Playlist/Playlist.jsx'
-import { useSpotifyTokenManager } from '../../hooks/useSpotifyTokenManager.js'
+import { usePageManager } from '../../hooks/usePageManager.js'
 
 const songs = [
   { songName: "Take on me", artist: "Aha" },
@@ -12,9 +12,9 @@ const songs = [
 ];
 
 function AppPage() {
+  usePageManager();
+  
   const [musicInput, setMusicInput] = useState("")
-
-  const [spotifyToken, isSpotifyTokenValid] = useSpotifyTokenManager();
 
   function onMusicInputChange(newInput) {
     setMusicInput(newInput);
@@ -38,4 +38,4 @@ function AppPage() {
   )
 }
 
-export default AppPage
+export default AppPage;
