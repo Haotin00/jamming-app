@@ -32,7 +32,7 @@ function Playlist({ tracks, onMoveTrack, onSavePlaylist }) {
                     </ResultCard>
                 })}
             </div>
-            {playlistName && <button onClick={handleSavePlaylist}> Save to spotify </button>}
+            {(playlistName && tracks.length > 0) && <button onClick={handleSavePlaylist}> Save to spotify </button>}
         </div>
     );
 }
