@@ -6,7 +6,13 @@ function SearchResult({ tracks, onMoveTrack }) {
     return (
         <div className='search-result-container'>
             <h1 id='title'> Results </h1>
-            {tracks.map((track) => { return <ResultCard key={track.id} id={track.id} name={track.name} artist={track.artist} Icon={PlusIcon} onClick={onMoveTrack}/> })}
+            {tracks.map((track) => {
+                return <ResultCard key={track.id} id={track.id}
+                    name={track.name} artist={track.artist}
+                    onClick={onMoveTrack}>
+                    <PlusIcon />
+                </ResultCard>
+            })}
         </div>
     );
 }

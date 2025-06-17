@@ -7,7 +7,13 @@ function Playlist({ tracks, onMoveTrack }) {
         <div className="playlist-card">
             <input type="text" placeholder='Playlist name...'></input>
             <div className='song-container'>
-                {tracks.map((s) => { return <ResultCard key={s.id} id={s.id} name={s.name} artist={s.artist} onClick={onMoveTrack} Icon={MinusIcon}> </ResultCard> })}
+                {tracks.map((s) => {
+                    return <ResultCard key={s.id} id={s.id}
+                        name={s.name} artist={s.artist}
+                        onClick={onMoveTrack}>
+                        <MinusIcon />
+                    </ResultCard>
+                })}
             </div>
             <button> Save to spotify </button>
         </div>
