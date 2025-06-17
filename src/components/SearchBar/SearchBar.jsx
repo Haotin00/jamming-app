@@ -11,13 +11,26 @@ function SearchBar({ placeholder, searchCallback }) {
     }
 
     const handleClick = () => {
-        searchCallback(userInput);
+        if (userInput)
+        {
+            searchCallback(userInput);
+        }
+    }
+
+    const handleKeyUp = ({key}) => {
+        if (key === "Enter")
+        {
+            if (userInput)
+            {
+                searchCallback(userInput);
+            }
+        }
     }
 
     return (
         <div className='searchbar'>
                 <input type="text" placeholder={placeholder} value={userInput}
-                    onChange={handleChange}/>
+                    onChange={handleChange} onKeyUp={handleKeyUp}/>
                 <button className="searchbar-btn" onClick={handleClick}>
                     <SearchIcon></SearchIcon>
                 </button>
