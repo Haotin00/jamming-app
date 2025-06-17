@@ -28,12 +28,5 @@ export const usePageManager = () => {
        
     }, [spotifyToken]);
 
-    useEffect(() => {
-
-        const interval = setInterval(() => {console.log('spotify token is valid', isSpotifyTokenValid())}, 20*1000);
-
-        return () => {clearInterval(interval)};
-    }, [])
-
     return;
 }

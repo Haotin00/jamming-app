@@ -82,7 +82,6 @@ export async function handleSpotifyRedirect() {
     localStorage.removeItem('spotify_code_verifier');
 
     if (data.access_token) {
-      console.log('Valid token retrieved', data);
       return data;
     } else {
       console.error('Failed to obtain access token:', data);
