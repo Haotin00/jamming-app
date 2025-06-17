@@ -54,6 +54,7 @@ export async function handleSpotifyRedirect() {
   }
 
   if (!code) {
+    console.error('No code returned from spotify')
     return null;
   }
 

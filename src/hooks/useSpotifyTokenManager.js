@@ -47,7 +47,6 @@ export const useSpotifyTokenManager = () => {
                 return;
             }
             if (tokenExpirationDate > Date.now()) {
-                console.log("Token still valid, try to get token data..")
                 const localAccessToken = localStorage.getItem(localStorageKeys.ACCESS_TOKEN);
                 const localRefreshToken = localStorage.getItem(localStorageKeys.REFRESH_TOKEN);
                 if (!localAccessToken)
