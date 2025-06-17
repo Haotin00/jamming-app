@@ -3,7 +3,7 @@ export const redirectRoute = import.meta.env.VITE_SPOTIFY_REDIRECT_ROUTE;
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const redirectUri = baseUrl + redirectRoute;
 
-const scope = 'user-read-private user-read-email'; // Adjust scopes as needed
+const scope = 'user-read-private user-read-email playlist-modify-public playlist-modify-private'; // Adjust scopes as needed
 
 // Generate a random string for the code verifier
 function generateCodeVerifier(length = 128) {
