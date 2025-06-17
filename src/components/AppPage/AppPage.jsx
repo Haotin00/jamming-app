@@ -26,12 +26,18 @@ function AppPage() {
     }
   }
 
-  const moveToPlaylist = (id) => {
+  const tryToAddToPlaylist = (id) => {
+    // If track is already in the playlist, don't add it again
+    if (playlist.some((t) => t.id === id)) return;
+
     const track = trackResults.find((t) => t.id === id);
-    if (!track) return;
-  
+    if (!track)
+    {
+      console.error("Track not found in list, should not happen !");
+      return;
+    }
+    
     setPlaylist((prev) => [...prev, track]);
-    setTrackResults((prev) => prev.filter((t) => t.id !== id));
   };
 
   const removeFromPlaylist = (id) => {
@@ -45,7 +51,7 @@ function AppPage() {
       </SearchBar>
       <div className='container'>
         <div className='search-result'>
-          <SearchResult tracks={trackResults} onMoveTrack={moveToPlaylist}></SearchResult>
+          <SearchResult tracks={trackResults} onMoveTrack={tryToAddToPlaylist}></SearchResult>
         </div>
         <div className='playlist'>
           <Playlist tracks={playlist} onMoveTrack={removeFromPlaylist}></Playlist>
