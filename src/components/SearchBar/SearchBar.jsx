@@ -5,7 +5,7 @@ import SearchIcon from '../../assets/search-btn.svg?react'
 function SearchBar({ placeholder, searchCallback }) {
     const [userInput, setUserInput] = useState("");
 
-    function onChange(event) {
+    function handleChange(event) {
         const target = event.target;
         setUserInput(target.value);
     }
@@ -17,7 +17,7 @@ function SearchBar({ placeholder, searchCallback }) {
     return (
         <div className='searchbar'>
                 <input type="text" placeholder={placeholder} value={userInput}
-                    onChange={onChange}/>
+                    onChange={handleChange}/>
                 <button className="searchbar-btn" onClick={handleClick}>
                     <SearchIcon></SearchIcon>
                 </button>
