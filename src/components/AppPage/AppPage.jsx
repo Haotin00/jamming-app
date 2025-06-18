@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './AppPage.css'
-import Header from '../Header/Header.jsx'
+import Header from '../Header/Header'
 import SearchBar from '../SearchBar/SearchBar.jsx'
 import SearchResult from '../SearchResult/SearchResult.jsx'
 import Playlist from '../Playlist/Playlist.jsx'

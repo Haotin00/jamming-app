@@ -1,4 +1,4 @@
-import Header from '../Header/Header.jsx'
+import Header from '../Header/Header'
 import './AuthPage.css'
 import { redirectToSpotifyAuth } from '../../api/spotify/spotifyAuth'
 import { usePageManager } from '../../hooks/usePageManager.js'
